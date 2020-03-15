@@ -1,5 +1,7 @@
 # Enchufe
 
+![Demo](./demo.gif)
+
 Following [tutorial](https://code.likeagirl.io/how-to-make-a-server-side-timer-with-phoenix-websockets-96d0e1e56f2d)
 
 
