@@ -9,9 +9,10 @@ defmodule Enchufe.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      EnchufeWeb.Endpoint
+      EnchufeWeb.Endpoint,
       # Starts a worker by calling: Enchufe.Worker.start_link(arg)
       # {Enchufe.Worker, arg},
+      Enchufe.Timer
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
