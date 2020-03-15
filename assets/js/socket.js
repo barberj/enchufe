@@ -61,6 +61,8 @@ channel.join()
   .receive("error", resp => { console.log("Unable to join", resp) })
 
 channel.on('new_time', msg => {
+  document.getElementById('status').innerHTML = msg.response
+  document.getElementById('timer').innerHTML = msg.time
   console.log("The timer is: ", msg.time)
 })
 
