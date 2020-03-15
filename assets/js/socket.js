@@ -60,10 +60,18 @@ channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
 
+let startTimer = function (event) {
+  event.preventDefault()
+  channel.push('start_timer', {})
+    .receive('ok', resp => { console.log('Started timer', resp) })
+}
+
 channel.on('new_time', msg => {
   document.getElementById('status').innerHTML = msg.response
   document.getElementById('timer').innerHTML = msg.time
   console.log("The timer is: ", msg.time)
 })
+
+document.getElementById('start-timer').onclick = startTimer
 
 export default socket

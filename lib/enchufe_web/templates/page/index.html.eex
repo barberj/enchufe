@@ -3,6 +3,7 @@
   <p>A productive web framework that<br/>does not compromise speed or maintainability.</p>
   <p id="status" class="lead">Ready</p>
   <p id="timer" class="lead"></p>
+  <button class="btn btn-primary" id="start-timer">Start Timer</button>
 </section>
 
 <section class="row">

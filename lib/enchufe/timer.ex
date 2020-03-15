@@ -10,10 +10,18 @@ defmodule Enchufe.Timer do
 
   def init(_state) do
     Logger.warn("Enchufe timer server started")
+    EnchufeWeb.Endpoint.subscribe("timer:start", [])
     broadcast(30, "Started timer!")
     # 1 sec timer
     schedule_timer(1_000)
     {:ok, 30}
+  end
+
+  def handle_info(%{event: "start_timer"}, _time) do
+    duration = 30
+    schedule_timer 1_000
+    broadcast duration, "Started timer!"
+    {:noreply, duration}
   end
 
   def handle_info(:update, 0) do
